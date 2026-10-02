@@ -1,0 +1,95 @@
+{
+  "data_through": "2026-09-23",
+  "history_count": 42,
+  "seed": 20261002,
+  "seed_choice": "Client date 2026-10-02, not optimized",
+  "formula": "w(n) = 0.50/55 + 0.30*frequency(n)/6 + 0.20*decay12(n)/6",
+  "tickets": [
+    [
+      26,
+      32,
+      45,
+      48,
+      50,
+      52
+    ],
+    [
+      4,
+      9,
+      10,
+      15,
+      19,
+      41
+    ],
+    [
+      2,
+      13,
+      23,
+      27,
+      30,
+      53
+    ]
+  ],
+  "selection": "Top six weights, then two weighted random tickets excluding previously selected numbers",
+  "exact_match_probability_per_ticket_if_fair": 3.449504004442961e-08,
+  "exact_match_probability_three_distinct_tickets_if_fair": 1.0348512013328883e-07,
+  "interpretation": "Disjoint tickets increase number coverage, not exact-match odds versus any other three distinct tickets.",
+  "checks": {
+    "training_validation": {
+      "exact_matches": 0,
+      "ticket_evaluations": 60,
+      "match_histogram": [
+        33,
+        18,
+        8,
+        1,
+        0,
+        0,
+        0
+      ],
+      "note": "Repeated seeds share the same draws and anchor; these are not independent trials."
+    },
+    "frozen_targets": {
+      "exact_matches": 0,
+      "ticket_evaluations": 33,
+      "match_histogram": [
+        18,
+        12,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "note": "Repeated seeds share the same draws and anchor; these are not independent trials."
+    },
+    "rolling_targets": {
+      "exact_matches": 0,
+      "ticket_evaluations": 33,
+      "match_histogram": [
+        20,
+        11,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "note": "Repeated seeds share the same draws and anchor; these are not independent trials."
+    },
+    "randomness_sensitivity_100_seeds": {
+      "exact_matches": 0,
+      "ticket_evaluations": 3300,
+      "match_histogram": [
+        1584,
+        1236,
+        450,
+        30,
+        0,
+        0,
+        0
+      ],
+      "note": "Repeated seeds share the same draws and anchor; these are not independent trials."
+    }
+  }
+}
