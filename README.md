@@ -8,6 +8,10 @@ The workflow in `.github/workflows/pages.yml` tests and builds the site on pushe
 
 Build locally with `uv run python build_site.py`. The generated `dist/` directory contains the picker, lab, and model/report JSON. Only this directory is published. Historical data is generated at build time; Pages does not run the Python server. The site works under a repository URL such as `https://OWNER.github.io/REPOSITORY/`.
 
+## Vercel deployment and visitor analytics
+
+`vercel.json` builds the same `dist/` site on Vercel. When the build runs on Vercel (`VERCEL` is set), `build_site.py` adds the Vercel Web Analytics script to `index.html` and `lab.html`, so unique visitors and page views appear under the project's **Analytics** tab. Enable Web Analytics once in the Vercel project settings. It is cookie-free and does not see saved selections or the WhatsApp number. Local and GitHub Pages builds omit the script.
+
 Saved selections remain browser-local and do not transfer from localhost to the published site's address. Enter your WhatsApp destination in the site’s browser-only setting. No default phone number is published. Use **Forget number** to remove the saved destination.
 
 ## Local server
