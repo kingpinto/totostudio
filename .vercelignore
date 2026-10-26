@@ -1,0 +1,7 @@
+.venv/
+.uv-cache/
+dist/
+.test-tmp/
+__pycache__/
+.github/
+tests/

@@ -21,13 +21,26 @@ Open http://127.0.0.1:6550. Stop with Ctrl+C. If an older server is already runn
 ## Using the picker
 
 - Switch between 6/55 and 6/58. All 58 numbers remain visible; 56–58 are disabled for 6/55. Switching to 6/55 removes selections and locks outside its range.
+- Choose **4D** to build one four-digit number (0000–9999) or **4D Jackpot** to build a pair of two different 4D numbers. Tap digits on the 0–9 keypad in order; digits can repeat and **Delete last digit** removes one. Tap a digit in your selection to lock that position. Selection size does not apply to 4D. No 4D history is supplied, so Model based uses a digit-balance pattern model. Low/high draw unlocked digits from 0–4 or 5–9.
+- 4D rules (Sports Toto, as published by third-party result sites because the official site could not be fetched): each draw has 23 winning numbers, 1st, 2nd and 3rd prizes plus 10 Starter (Special) and 10 Consolation. 4D Jackpot is played as a pair for RM2: Jackpot 1 needs both numbers among the top three prizes, Jackpot 2 needs one top-three and one Starter match, and single matches win smaller fixed prizes. Assuming 23 different, uniformly drawn winning numbers, a 4D number has a 1 in 10,000 chance of 1st prize; Jackpot 1 odds are 1 in 16,665,000 and Jackpot 2 odds 1 in 1,666,500. The app does not choose Big/Small, iBox, or other bet types.
 - Choose **Standard**, **System 7**, or **System 8** to pick 6, 7, or 8 distinct numbers. Changing size clears the editor and keeps all saved sets. Saved sets restore their size when selected, and their size is included in copied and WhatsApp messages.
 - Tap the board to choose up to the selected number count, or generate a set using Feeling lucky, Model based, Low numbers, High numbers, Balanced, or Creative series.
-- Tap a ball in your selection to lock it. Generating adds a completed set to your selection list and preserves locked favorites in the editor. Unlock at least one number to generate or refine.
-- **Refine** changes one unlocked number according to the current style and adds the result to the list, keeping the original. Lucky and creative selections use balance for refinement. A refinement changes the shape, not the odds.
-- **Challenge** questions patterns; **Support** describes validity and composition. Neither changes your numbers or predicts a win.
-- Every completed manual or generated set is saved in the list. Identical sets in the same game share one entry. Select any entry to refine, challenge, or support it, or delete unwanted entries. Switching games and clearing the editor keep your saved list.
-- Use **Lock in** on each set you want to share. The message preview includes only those sets; **Unlock set** removes one from the message. This is separate from locking individual favorite numbers.
+- Tap a ball in your selection to lock it. Generating preserves locked favorites; unlock at least one number to generate or to get suggested changes.
+- **Refine** shows insights for a complete set without changing it. For 6/55 and 6/58: odd/even and low/high balance, how the total compares with random sets of the same size, spacing, number-group spread, shared-prize risk (numbers 31 or lower are popular birthday picks, so a jackpot won with them is more likely to be split), and jackpot odds including System 7/8 coverage. For 4D: the digit pattern (year, date, run, repeats), the number of arrangements a permutation bet would cover, digit balance, how a jackpot pair's two numbers relate, and prize odds. It also suggests up to three one-number (or one-digit) changes, each with a different aim: more balanced, fewer date numbers, wider spacing, fewer repeated digits, more arrangements, or a wildcard. **Use this** applies a suggestion to the editor; Undo reverts it. Locked numbers never change. Insights describe a set; none of them changes its odds.
+- Generated and completed sets are not saved automatically. Press 👍 (Add to list) to keep the current set; it stays highlighted while that set is already in your list. 👎 opens Refine. Select a saved set to load it into the editor, **Refine** it for insights, or delete it. **Delete all** removes every saved set after a confirmation; Undo restores them. Switching games and clearing the editor keep your saved list.
+- Use **Lock in** on each set you want to share. The message preview includes only those sets; **Unlock set** removes one from the message. This is separate from locking individual favorite numbers. The message groups sets under one heading per game and size, in the order 6/55, 6/58, 4D, 4D Jackpot, with numbers separated by spaces:
+
+  ```text
+  6/55 - System 6
+  03 09 17 24 41 52
+  01 02 03 04 05 06
+
+  4D
+  0 0 7 9
+
+  4D Jackpot
+  1 2 3 4 - 5 6 7 8
+  ```
 - **Open WhatsApp** prepares the previewed message for the number you save in this browser using [WhatsApp click to chat](https://faq.whatsapp.com/5913398998672934). Press **Send** in WhatsApp to deliver it; the app does not automatically send or confirm delivery. No WhatsApp API credentials are configured.
 - Undo the last selection, lock, deletion, or game change; copy a completed set to the clipboard. Saved sets and their lock-in status persist in this browser using local storage. The editor and undo history reset on refresh. If browser storage is unavailable, the list lasts only while the page is open.
 
@@ -45,13 +58,13 @@ node tests/picker.cjs
 node tests/ui_smoke.cjs
 ```
 
-The picker tests exercise bounds, uniqueness, locks, refinement, manual selection limits, game switching, undo, reviews, model errors, saved-list actions, storage reload, and WhatsApp message contents and destination. DOM checks use a minimal simulated document and do not replace visual browser testing.
+The picker tests exercise bounds, uniqueness, locks, Refine suggestions and insights, manual selection limits, game switching, undo, Add to list, model errors, saved-list actions, storage reload, and WhatsApp message contents and destination. DOM checks use a minimal simulated document and do not replace visual browser testing.
 
 ## Application files
 
 - `app.py`: local server, historical model API, and experiment report API/export.
 - `web/index.html`, `web/style.css`, `web/app.js`: responsive number picker.
-- `web/picker.js`: generation and refinement algorithms.
+- `web/picker.js`: generation algorithms and Refine suggestions.
 - `web/lab.html`: original experiment dashboard.
 - `engine.py`: original data validation and model experiments.
 

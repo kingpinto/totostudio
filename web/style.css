@@ -7,3 +7,8 @@
 .balls{grid-template-columns:repeat(auto-fit,minmax(48px,1fr))}.select-set strong{overflow-wrap:anywhere}
 
 .phone-setting{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:center}.phone-setting label{width:100%;font-size:13px}.phone-setting input{min-width:0;max-width:100%;padding:12px;border:1px solid #dce2d6;border-radius:8px;font:inherit}.phone-setting button{padding:12px}
+
+.board.digits{grid-template-columns:repeat(5,minmax(0,1fr))}.board.digits .number{font-size:22px;max-height:96px;justify-self:center;width:100%;max-width:96px}.board.digits .number.back{grid-column:1/-1;aspect-ratio:auto;border-radius:9px;padding:12px;font-size:13px;max-width:none}.balls.digits{grid-template-columns:repeat(4,minmax(0,1fr))}
+.saved-tools{display:flex;align-items:center;gap:14px}
+.actions{grid-template-columns:repeat(2,1fr)}.review{align-items:start}.review-body{font-size:13px;color:#516750;line-height:1.65;white-space:pre-line}.insights{margin:0;padding-left:18px;display:grid;gap:7px;white-space:normal}.insights strong{color:#213a32;margin-right:4px}.suggestions h3{font-size:13px;margin:20px 0 4px}.suggestion{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #cfdac4;background:#f7faf2;border-radius:10px;padding:10px 12px;margin-top:8px}.suggestion strong,.suggestion span,.suggestion small{display:block}.suggestion strong{font-size:12px}.suggestion span{font-size:16px;font-weight:600;letter-spacing:1px;margin:3px 0;overflow-wrap:anywhere}.suggestion small{font-size:11px;color:#637969}.suggestion button{padding:8px 12px;white-space:nowrap;font-size:12px}
+.actions button.icon{font-size:22px;padding:8px 5px;line-height:1.2}.actions button.icon.in-list{background:#eaf0df;border-color:#849b69;opacity:1}
